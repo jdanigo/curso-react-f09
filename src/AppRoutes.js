@@ -7,6 +7,7 @@ import ClientesScreen from './pages/clientes'
 import PedidosScreen from './pages/pedidos'
 import ProductosScreen from './pages/productos'
 import CategoriasScreen from './pages/categorias'
+import CategoriaClaseScreen from './pages/categorias/categorias-clase'
 import LoginScreen from './pages/login'
 
 //Importar los layouts
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
     children: [
       {path: 'dashboard',element: <HomeScreen/>},
       {path: 'categorias',element: <CategoriasScreen/>},
+      {path: 'categorias-legacy',element: <CategoriaClaseScreen/>},
       {path: 'productos',element: <ProductosScreen/>},
       {path: 'pedidos',element: <PedidosScreen/>},
       {path: 'clientes',element: <ClientesScreen/>}
