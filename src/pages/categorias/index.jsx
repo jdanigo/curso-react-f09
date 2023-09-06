@@ -10,13 +10,13 @@ const CategoriasScreen = () => {
     const [categorias,setCategorias] = useState({})
     const [persona,setPersona] = useState("")
     const [isLogged,setIsLogged] = useState(false)
+
+   
     
     React.useEffect(()=>{},[])
 
     //useEffect -> reemplaza el ciclo de vida de los componentes basados en clases
-    React.useEffect(()=>{
-        console.log("Me ejecuto cada que tengo un cambio")
-    }) // -> sin argumentos, se va a disparar cada que el componente sufra un cambio
+    React.useEffect(()=>{console.log("Me ejecuto cada que tengo un cambio")}) // -> sin argumentos, se va a disparar cada que cualquiera de los hooks sufra un cambio
 
     React.useEffect(()=>{
         console.log("Me ejecuto una sola vez cuando se monta el DOM")
@@ -30,13 +30,8 @@ const CategoriasScreen = () => {
     },[contador,nombre,apellido]) // -> como segundo argumento, recibe las deps o dependencias, cuando tiene dependencias se va a ejecutar una única vez y es cuando se monta el DOM y cada que esa dependencia sufra un cambio
 
     const saludar = () => {
-
         alert("Bienvenido "+nombre+ " "+apellido);
-
     }
-
-    
-
 
     React.useEffect(()=>{        
         return () => {
@@ -56,6 +51,7 @@ const CategoriasScreen = () => {
     const handleChangeName = (e) => {
         const {value, name} = e.target;
         setNombre(value);
+        setContador(contador + 1);
     }
 
     const handleChangeApellido = (e) => {
