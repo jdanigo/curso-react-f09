@@ -1,7 +1,22 @@
 import React from 'react';
 import {Container, Row, Col,Card} from 'react-bootstrap'
 import './login.css'
+import { setLoginAction } from '../../redux/slices/authSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 const LoginScreen = () => {
+
+    const navigate =useNavigate();
+    const dispatch = useDispatch()
+
+    const handleLogin = () => {
+        const data = {
+            email: "tatanbmx@gmail.com",
+            password: "tatanbmx"
+        }
+        dispatch(setLoginAction(data))
+        navigate("/dashboard")
+    }
 
     return(
         <div className="login-page">
@@ -20,7 +35,7 @@ const LoginScreen = () => {
                                 <input type="password" className="form-control" name="clave" />
                             </div>
                             <div className="mt-3 mb-3">
-                                <button type="button" className="btn btn-success">Ingresar</button>
+                                <button type="button" onClick={()=>handleLogin()} className="btn btn-success">Ingresar</button>
                             </div>
                         </Card.Body>
                     </Card>

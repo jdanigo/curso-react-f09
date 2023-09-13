@@ -12,6 +12,7 @@ import LoginScreen from './pages/login'
 
 //Importar los layouts
 import MainLayout from './layouts/MainLayout'
+import NuevoClienteScreen from './pages/clientes/nuevo';
 
 // Lógica y manejo de estados del componente, aqui se escribe solo codigo javascript
 
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       {path: 'categorias-legacy',element: <CategoriaClaseScreen/>},
       {path: 'productos',element: <ProductosScreen/>},
       {path: 'pedidos',element: <PedidosScreen/>},
-      {path: 'clientes',element: <ClientesScreen/>}
+      {path: 'clientes',element: <ClientesScreen/>},
+      {path: 'clientes/nuevo',element: <NuevoClienteScreen/>}
     ]
   }
 ])
